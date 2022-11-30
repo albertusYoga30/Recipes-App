@@ -1,4 +1,4 @@
-package com.example.modernrecipes
+package com.example.modernrecipes.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.modernrecipes.R
 import com.example.modernrecipes.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
