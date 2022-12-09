@@ -10,8 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.modernrecipes.R
 import com.example.modernrecipes.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

@@ -1,6 +1,5 @@
 package com.example.modernrecipes.models
 
-
 import com.example.modernrecipes.models.ExtendedIngredient
 import com.google.gson.annotations.SerializedName
 
