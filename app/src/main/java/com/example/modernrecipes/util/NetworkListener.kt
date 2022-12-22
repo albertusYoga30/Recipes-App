@@ -40,6 +40,7 @@ class NetworkListener : ConnectivityManager.NetworkCallback() {
                 isNetworkAvailable.value = true
                 isNetworkAvailable
             }
+
             else -> {
                 isNetworkAvailable.value = false
                 isNetworkAvailable
