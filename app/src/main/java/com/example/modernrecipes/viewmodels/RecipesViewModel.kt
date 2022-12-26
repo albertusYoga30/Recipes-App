@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.modernrecipes.data.DataStoreRepository
-import com.example.modernrecipes.data.MealAndDietType
 import com.example.modernrecipes.util.Constants.Companion.API_KEY
 import com.example.modernrecipes.util.Constants.Companion.DEFAULT_DIET_TYPE
 import com.example.modernrecipes.util.Constants.Companion.DEFAULT_MEAL_TYPE
@@ -20,7 +19,6 @@ import com.example.modernrecipes.util.Constants.Companion.QUERY_SEARCH
 import com.example.modernrecipes.util.Constants.Companion.QUERY_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
