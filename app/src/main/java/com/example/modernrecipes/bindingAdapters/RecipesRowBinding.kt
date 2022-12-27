@@ -12,6 +12,7 @@ import coil.load
 import com.example.modernrecipes.R
 import com.example.modernrecipes.models.Result
 import com.example.modernrecipes.ui.fragments.recipes.RecipesFragmentDirections
+import org.jsoup.Jsoup
 
 class RecipesRowBinding {
 
@@ -26,7 +27,7 @@ class RecipesRowBinding {
                     val action =
                         RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
                     recipeRowLayout.findNavController().navigate(action)
-                }catch (e: Exception){
+                } catch (e: Exception) {
                     Log.d("onRecipeClickListener", e.toString())
                 }
             }
@@ -67,6 +68,17 @@ class RecipesRowBinding {
                     }
                 }
             }
+        }
+
+
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtml(textView: TextView, description: String?) {
+            if (description != null){
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
+            }
+
         }
 
     }

@@ -44,7 +44,6 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onCreate(savedInstanceState)
         mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         recipesViewModel = ViewModelProvider(requireActivity())[RecipesViewModel::class.java]
-
     }
 
     override fun onCreateView(
