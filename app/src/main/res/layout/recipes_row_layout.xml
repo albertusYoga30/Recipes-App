@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="result"
             type="com.example.modernrecipes.models.Result" />
@@ -67,12 +68,12 @@
 
                 <TextView
                     android:id="@+id/recipe_desc"
+                    parseHtml="@{result.summary}"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    parseHtml="@{result.summary}"
                     android:textColor="@color/darkGray"
                     app:layout_constraintEnd_toEndOf="@+id/recipe_title"
                     app:layout_constraintStart_toStartOf="@+id/recipe_title"
@@ -88,7 +89,6 @@
                     app:layout_constraintEnd_toEndOf="@+id/like_count"
                     app:layout_constraintStart_toStartOf="@+id/like_count"
                     app:layout_constraintTop_toBottomOf="@+id/recipe_desc"
-                    app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/ic_like"
                     app:tint="@color/red" />
 
