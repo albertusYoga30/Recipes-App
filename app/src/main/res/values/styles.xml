@@ -2,7 +2,7 @@
 <resources>
 
     <style name="DetailsActivityStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorAccent">@color/purple_200</item>
         <item name="colorControlNormal">@color/white</item>
