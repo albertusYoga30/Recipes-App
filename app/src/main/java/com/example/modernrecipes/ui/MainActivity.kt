@@ -32,11 +32,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.foodJokeFragment
             )
         )
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigationView.setupWithNavController(navController)
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

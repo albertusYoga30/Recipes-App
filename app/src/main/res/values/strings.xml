@@ -40,4 +40,6 @@
     <string name="default_number">0</string>
     <string name="delete_favorite_menu">Delete Favorite Menu</string>
     <string name="delete_all">Delete All</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec mauris a dui tristique efficitur. In sed enim et mauris tincidunt semper. Vestibulum eu lobortis ligula.</string>
+    <string name="share">Share</string>
 </resources>
