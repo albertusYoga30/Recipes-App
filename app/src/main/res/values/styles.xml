@@ -12,9 +12,8 @@
         <item name="bottomNavigationStyle">@style/CustomBottomNavigationViewStyle</item>
     </style>
 
-    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+    <style name="SplashScreen" parent="Theme.SplashScreen">
         <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
@@ -30,7 +29,7 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorAccent">@color/purple_200</item>
         <item name="colorControlNormal">@color/white</item>
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
     </style>
 
     <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
@@ -52,8 +51,8 @@
 
     <style name="CustomBottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="backgroundTint">@color/bottomNavBackground</item>
-        <item name="itemIconTint">@color/bottomNavItemColor</item>
-        <item name="itemTextColor">@color/bottomNavItemColor</item>
+        <item name="itemIconTint">@color/bottom_nav_view_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_view_item_color</item>
     </style>
 
 
