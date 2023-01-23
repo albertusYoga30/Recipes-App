@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainViewModel"
             type="com.example.modernrecipes.viewmodels.MainViewModel" />
+
         <variable
             name="mAdapter"
             type="com.example.modernrecipes.adapters.FavoriteRecipesAdapter" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,12 +20,11 @@
         android:backgroundTint="@color/backgroundColor"
         tools:context=".ui.fragments.favorites.FavoriteRecipesFragment">
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favoritesRecipesRecyclerView"
-            android:layout_width="match_parent"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             setData="@{mAdapter}"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -37,10 +37,10 @@
 
         <ImageView
             android:id="@+id/emptyDataImageView"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:alpha="0.5"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:src="@drawable/ic_menu_book"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,13 +52,13 @@
 
         <TextView
             android:id="@+id/emptyDataTextView"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:alpha="0.5"
             android:text="@string/no_favorites_recipes"
             android:textSize="18sp"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/emptyDataImageView"
