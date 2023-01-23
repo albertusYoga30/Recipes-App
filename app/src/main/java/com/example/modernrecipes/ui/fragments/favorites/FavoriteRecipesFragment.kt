@@ -53,7 +53,7 @@ class FavoriteRecipesFragment : Fragment() {
                 }
                 return true
             }
-        },viewLifecycleOwner, Lifecycle.State.RESUMED)
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         setupRecyclerView(binding.favoritesRecipesRecyclerView)
 
@@ -71,8 +71,8 @@ class FavoriteRecipesFragment : Fragment() {
             .show()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
         mAdapter.clearContextualActionMode()
     }

@@ -21,7 +21,7 @@ class OverviewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentOverviewBinding.inflate(inflater, container, false)
 
@@ -32,7 +32,6 @@ class OverviewFragment : Fragment() {
         binding.titleTextView.text = myBundle.title
         binding.likesTextView.text = myBundle.aggregateLikes.toString()
         binding.timeTextView.text = myBundle.readyInMinutes.toString()
-//        binding.summaryTextView.text = myBundle.summary
         myBundle.summary.let {
             val summary = Jsoup.parse(it).text()
             binding.summaryTextView.text = summary
@@ -124,5 +123,10 @@ class OverviewFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

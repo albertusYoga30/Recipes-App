@@ -49,7 +49,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
@@ -77,7 +77,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         }
 
 
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
                 .collect { status ->
@@ -100,7 +100,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        if (query != null){
+        if (query != null) {
             searchApiData(query)
         }
         return true
@@ -176,7 +176,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                is NetworkResult.Loading ->{
+                is NetworkResult.Loading -> {
                     showShimmerEffect()
                 }
             }
@@ -207,10 +207,4 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onDestroyView()
         _binding = null
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
 }

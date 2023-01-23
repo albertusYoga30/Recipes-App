@@ -19,34 +19,32 @@ class FavoriteRecipesBinding {
             favoritesEntity: List<FavoritesEntity>?,
             mAdapter: FavoriteRecipesAdapter?
         ) {
-            if (favoritesEntity.isNullOrEmpty()){
-                 when(view){
-                     is ImageView ->{
-                         view.visibility = View.VISIBLE
-                     }
-                     is TextView ->{
-                         view.visibility = View.VISIBLE
-                     }
-                     is RecyclerView ->{
-                         view.visibility = View.INVISIBLE
-                     }
-                 }
-            }else{
-                when(view){
-                    is ImageView ->{
+            if (favoritesEntity.isNullOrEmpty()) {
+                when (view) {
+                    is ImageView -> {
+                        view.visibility = View.VISIBLE
+                    }
+                    is TextView -> {
+                        view.visibility = View.VISIBLE
+                    }
+                    is RecyclerView -> {
                         view.visibility = View.INVISIBLE
                     }
-                    is TextView ->{
+                }
+            } else {
+                when (view) {
+                    is ImageView -> {
                         view.visibility = View.INVISIBLE
                     }
-                    is RecyclerView ->{
+                    is TextView -> {
+                        view.visibility = View.INVISIBLE
+                    }
+                    is RecyclerView -> {
                         view.visibility = View.VISIBLE
                         mAdapter?.setData(favoritesEntity)
                     }
                 }
             }
-
-
         }
     }
 }

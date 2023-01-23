@@ -7,7 +7,6 @@
         <variable
             name="mainViewModel"
             type="com.example.modernrecipes.viewmodels.MainViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,23 +34,14 @@
                 android:orientation="vertical">
 
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
-
                 <include layout="@layout/placeholder_row_layout" />
 
             </LinearLayout>
@@ -107,13 +97,13 @@
 
         <TextView
             android:id="@+id/offline_textView"
-            readApiResponse2="@{mainViewModel.recipeResponse}"
-            readDatabase2="@{mainViewModel.readRecipes}"
+            readApiResponse="@{mainViewModel.recipeResponse}"
+            readDatabase="@{mainViewModel.readRecipes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:alpha="0.5"
-            android:text="No Internet Connection"
+            android:text="@string/text_no_internet_connection"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"

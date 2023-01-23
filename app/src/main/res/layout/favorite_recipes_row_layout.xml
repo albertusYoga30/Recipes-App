@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="favoritesEntity"
             type="com.example.modernrecipes.data.database.entities.FavoritesEntity" />
@@ -91,10 +90,9 @@
 
                 <TextView
                     android:id="@+id/favorite_like_count"
-                    setNumberOfLikes="@{favoritesEntity.result.aggregateLikes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_number"
+                    android:text="@{String.valueOf(favoritesEntity.result.aggregateLikes)}"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/favorite_recipe_desc"
@@ -112,11 +110,10 @@
 
                 <TextView
                     android:id="@+id/favorite_time_count"
-                    setNumberOfMinutes="@{favoritesEntity.result.readyInMinutes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="@string/default_number"
+                    android:text="@{String.valueOf(favoritesEntity.result.readyInMinutes)}"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/favorite_like_count"

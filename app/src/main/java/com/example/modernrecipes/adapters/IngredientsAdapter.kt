@@ -15,7 +15,6 @@ import java.util.*
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
-
     class MyViewHolder(val binding: IngredientsRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -40,8 +39,6 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
         holder.binding.ingredientUnit.text = ingredientsList[position].unit
         holder.binding.ingredientConsistency.text = ingredientsList[position].consistency
         holder.binding.ingredientOriginal.text = ingredientsList[position].original
-
-
     }
 
     override fun getItemCount(): Int {

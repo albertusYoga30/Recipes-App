@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
-import com.example.modernrecipes.R
-import com.example.modernrecipes.databinding.FragmentRecipesBinding
 import com.example.modernrecipes.databinding.RecipesBottomSheetBinding
 import com.example.modernrecipes.util.Constants.Companion.DEFAULT_DIET_TYPE
 import com.example.modernrecipes.util.Constants.Companion.DEFAULT_MEAL_TYPE
@@ -39,7 +37,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = RecipesBottomSheetBinding.inflate(inflater, container, false)
 
@@ -72,27 +70,27 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
                 dietTypeChip,
                 dietTypeChipId
             )
-            val action = RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
+            val action =
+                RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
             findNavController().navigate(action)
         }
-
 
         return binding.root
     }
 
     private fun updateChip(chipId: Int, chipGroup: ChipGroup) {
-        if (chipId != 0){
+        if (chipId != 0) {
             try {
                 chipGroup.findViewById<Chip>(chipId).isChecked = true
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("RecipesBottomSheet", e.message.toString())
             }
         }
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }

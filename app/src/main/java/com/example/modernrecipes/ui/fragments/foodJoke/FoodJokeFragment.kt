@@ -31,7 +31,7 @@ class FoodJokeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFoodJokeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
@@ -61,7 +61,7 @@ class FoodJokeFragment : Fragment() {
             when (response) {
                 is NetworkResult.Success -> {
                     binding.foodJokeTextView.text = response.data?.text
-                    if (response.data != null){
+                    if (response.data != null) {
                         foodJoke = response.data.text
                     }
                 }
