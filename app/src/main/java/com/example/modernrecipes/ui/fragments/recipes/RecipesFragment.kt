@@ -111,10 +111,23 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     private fun setupRecyclerView() {
+        binding.shimmerLayout.visibility = View.VISIBLE
         binding.recyclerView.adapter = mAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         showShimmerEffect()
     }
+
+    private fun showShimmerEffect() {
+        binding.shimmerLayout.startShimmer()
+        binding.recyclerView.visibility = View.GONE
+    }
+
+    private fun hideShimmerEffect() {
+        binding.shimmerLayout.stopShimmer()
+        binding.shimmerLayout.visibility = View.GONE
+        binding.recyclerView.visibility = View.VISIBLE
+    }
+
 
     private fun readDatabase() {
         lifecycleScope.launch {
@@ -138,6 +151,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
                     response.data?.let { mAdapter.setData(it) }
+                    recipesViewModel.saveMealAndDietType()
                 }
 
                 is NetworkResult.Error -> {
@@ -194,14 +208,6 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         }
     }
 
-    private fun showShimmerEffect() {
-        binding.shimmerLayout.showShimmer(true)
-    }
-
-    private fun hideShimmerEffect() {
-        binding.shimmerLayout.hideShimmer()
-        binding.shimmerLayout.visibility = View.GONE
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainViewModel"
             type="com.example.modernrecipes.viewmodels.MainViewModel" />
@@ -24,9 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shimmer_repeat_mode="restart"
-            app:shimmer_shape="radial">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,14 +33,11 @@
                 android:orientation="vertical">
 
                 <include layout="@layout/placeholder_row_layout" />
+
                 <include layout="@layout/placeholder_row_layout" />
+
                 <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
-                <include layout="@layout/placeholder_row_layout" />
+
                 <include layout="@layout/placeholder_row_layout" />
 
             </LinearLayout>
@@ -54,7 +50,7 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="8dp"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,11 +58,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:itemCount="7"
             tools:listitem="@layout/recipes_row_layout">
 
         </androidx.recyclerview.widget.RecyclerView>
-
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/recipes_fab"
@@ -113,4 +107,5 @@
             app:layout_constraintTop_toBottomOf="@+id/ic_offline" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.modernrecipes.R
 import com.example.modernrecipes.models.Result
 import com.example.modernrecipes.adapters.IngredientsAdapter
 import com.example.modernrecipes.databinding.FragmentIngredientsBinding
